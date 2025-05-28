@@ -1,11 +1,10 @@
-prefix=@CMAKE_INSTALL_PREFIX@
-exec_prefix=${prefix}
-libdir=${prefix}/@CMAKE_INSTALL_LIBDIR@
-includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@
+ตำแหน่งหลักการติดตั้ง=@CMAKE_INSTALL_PREFIX@
+ตำแหน่งไฟล์ปฏิบัติการ=${ตำแหน่งหลักการติดตั้ง}
+ตำแหน่งไลบรารี=${ตำแหน่งหลักการติดตั้ง}/@CMAKE_INSTALL_LIBDIR@
+ตำแหน่งไฟล์เฮดเดอร์=${ตำแหน่งหลักการติดตั้ง}/include
 
-Name: @CLIENT_NAME@ kernel library
-Description: Experimental library for the @CLIENT_NAME@ validation engine.
-Version: @CLIENT_VERSION_STRING@
-Libs: -L${libdir} -lbitcoinkernel
-Libs.private: -L${libdir} @LIBS_PRIVATE@
-Cflags: -I${includedir}
+ชื่อไลบรารี: ไลบรารีแกนหลักของบิตคอยน์
+คำอธิบาย: โมดูลไลบรารีแกนหลักของบิตคอยน์
+เวอร์ชัน: @PROJECT_VERSION@
+คำสั่งลิงก์ไลบรารี: -L${ตำแหน่งไลบรารี} -lbitcoinkernel
+คำสั่งรวมไฟล์เฮดเดอร์: -I${ตำแหน่งไฟล์เฮดเดอร์}
